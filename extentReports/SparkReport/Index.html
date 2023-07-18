@@ -1,0 +1,879 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c952cc003431b643d7a73337421ff42b75bac784/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 18, 2023 06:50:52 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 18, 2023 06:50:52 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 18, 2023 06:52:09 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>4</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>4</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>4</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>53</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Admin feature":17.956,"Dashboard feature":27.002,"Login page feature":9.945,"HR Recruitment feature":20.929
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Admin_createUser</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Dashboard</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Login</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Recruitment</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>Automation Practice</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Ramesh Reddy K</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows 11</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 4,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 4,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 53,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Admin_createUser</a><a class="dropdown-item" href="#">@Dashboard</a><a class="dropdown-item" href="#">@Login</a><a class="dropdown-item" href="#">@Recruitment</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Admin feature</p>
+            <p class="text-sm">
+              <span>18:50:53 PM</span> / <span>00:00:17:956</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Admin feature</h5>
+<span class='badge badge-success'>07.18.2023 18:50:53</span>
+<span class='badge badge-danger'>07.18.2023 18:51:11</span>
+<span class='badge badge-default'>00:00:17:956</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Create user in user management tab</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_is_on_login_page()">
+                <span>Given user is on login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_username(java.lang.String)">
+                <span>When user enters username "Admin"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_password(java.lang.String)">
+                <span>And user enters password "admin123"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_clicks_on_login_button()">
+                <span>And user clicks on Login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>Then user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>And page title should be "OrangeHRM"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_click_on_dashboard()">
+                <span>And user click on admin tab</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_click_on_add_button()">
+                <span>And user click on add button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_adding_a_user_role(java.lang.String)">
+                <span>Then user adding a user role "Admin"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_enter_employee_name()">
+                <span>And user enter employee name</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_select_status_dropdown(java.lang.String)">
+                <span>And user select status dropdown "Enabled"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_entering_user_name()">
+                <span>And user entering user name</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_enter_password_and_confirm_password(java.lang.String,java.lang.String)">
+                <span>And user enter password and confirm password "Orange@123","Orange@123"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.AdminSteps.user_clicks_on_save_button()">
+                <span>And user clicks on save button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Dashboard feature</p>
+            <p class="text-sm">
+              <span>18:51:11 PM</span> / <span>00:00:27:002</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Dashboard feature</h5>
+<span class='badge badge-success'>07.18.2023 18:51:11</span>
+<span class='badge badge-danger'>07.18.2023 18:51:38</span>
+<span class='badge badge-default'>00:00:27:002</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="22"><span class="badge log pass-bg mr-2">Pass</span>Verify Dashboard features</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_is_on_login_page()">
+                <span>Given user is on login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_username(java.lang.String)">
+                <span>When user enters username "Admin"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_password(java.lang.String)">
+                <span>And user enters password "admin123"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_clicks_on_login_button()">
+                <span>And user clicks on Login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>Then user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>And page title should be "OrangeHRM"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.user_click_on_dashboard()">
+                <span>And user click on dashboard</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.first_widget_should_be(java.lang.String)">
+                <span>Then first widget should be "Time at Work"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.second_widget_should_be(java.lang.String)">
+                <span>And second widget should be "My Actions"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.third_widget_should_be(java.lang.String)">
+                <span>And third widget should be "Quick Launch"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.fourth_widget_should_be(java.lang.String)">
+                <span>And fourth widget should be "Buzz Latest Posts"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.fifth_widget_should_be(java.lang.String)">
+                <span>And fifth widget should be "Employees on Leave Today"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.sixth_widget_should_be(java.lang.String)">
+                <span>And sixth widget should be "Employee Distribution by Sub Unit"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.DashboardSteps.seventh_widget_should_be(java.lang.String)">
+                <span>And seventh widget should be "Employee Distribution by Location"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="41"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Login page feature</p>
+            <p class="text-sm">
+              <span>18:51:38 PM</span> / <span>00:00:09:945</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Login page feature</h5>
+<span class='badge badge-success'>07.18.2023 18:51:38</span>
+<span class='badge badge-danger'>07.18.2023 18:51:48</span>
+<span class='badge badge-default'>00:00:09:945</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="42"><span class="badge log pass-bg mr-2">Pass</span>Login with correct credentials</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_is_on_login_page()">
+                <span>Given user is on login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>When user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.forgot_your_password_link_should_be_displayed()">
+                <span>Then forgot your password link should be displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_username(java.lang.String)">
+                <span>When user enters username "Admin"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_password(java.lang.String)">
+                <span>And user enters password "admin123"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_clicks_on_login_button()">
+                <span>And user clicks on Login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>And page title should be "OrangeHRM"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="54"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">HR Recruitment feature</p>
+            <p class="text-sm">
+              <span>18:51:48 PM</span> / <span>00:00:20:929</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">HR Recruitment feature</h5>
+<span class='badge badge-success'>07.18.2023 18:51:48</span>
+<span class='badge badge-danger'>07.18.2023 18:52:09</span>
+<span class='badge badge-default'>00:00:20:929</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=54</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="55"><span class="badge log pass-bg mr-2">Pass</span>Verify HR recruitment add candidate details</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_is_on_login_page()">
+                <span>Given user is on login page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_username(java.lang.String)">
+                <span>When user enters username "Admin"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_enters_password(java.lang.String)">
+                <span>And user enters password "admin123"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_clicks_on_login_button()">
+                <span>And user clicks on Login button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.user_gets_the_title_of_the_page()">
+                <span>Then user gets the title of the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.LoginPageSteps.page_title_should_be(java.lang.String)">
+                <span>And page title should be "OrangeHRM"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_select_recruitment_tab()">
+                <span>Then user select recruitment tab</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_enter_first_name(java.lang.String)">
+                <span>And user enters first name "Test"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_enter_middle_name(java.lang.String)">
+                <span>And user enter middle name "QA"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_click_on_dashboard(java.lang.String)">
+                <span>And user enters last name "Automation"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_select_vacancy_dropdown(java.lang.String)">
+                <span>And user select vacancy dropdown "Senior QA Lead"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_enter_email_address(java.lang.String)">
+                <span>And user enters email address "testautomation@gmail.com"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_enter_contact_number(java.lang.String)">
+                <span>And user enter contact number "9876543210"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_click_on_browse_and_select_resume(java.lang.String)">
+                <span>And user click on browse and select resume "word document.docx"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_enter_keywords(java.lang.String)">
+                <span>And user enter keywords "QA,Automation,Selenium,Java"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_enter_notes(java.lang.String)">
+                <span>And user enter notes "Test QA Notes"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_select_concent_checkbox()">
+                <span>When user select concent checkbox</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.qa.steps.RecruitmentSteps.user_click_on_save_button()">
+                <span>Then user click on save button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Admin_createUser</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Admin_createUser</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:50:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Create user in user management tab</a>
+<div class="">
+<span class="badge badge-default">Admin feature.Create user in user management tab</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Dashboard</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Dashboard</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='21' id='22'>Verify Dashboard features</a>
+<div class="">
+<span class="badge badge-default">Dashboard feature.Verify Dashboard features</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Login</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Login</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='41' id='42'>Login with correct credentials</a>
+<div class="">
+<span class="badge badge-default">Login page feature.Login with correct credentials</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Recruitment</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Recruitment</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:51:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='54' id='55'>Verify HR recruitment add candidate details</a>
+<div class="">
+<span class="badge badge-default">HR Recruitment feature.Verify HR recruitment add candidate details</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
