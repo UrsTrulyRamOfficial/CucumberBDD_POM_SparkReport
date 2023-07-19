@@ -1,61 +1,65 @@
-# CucumberBDD_POM_SparkReport
+## CucumberBDD_POM_SparkReport
 
-This repository contains a collection of sample projects and libraries that demonstrate how to use selenium-cucumber-java, a BDD (Behavior-Driven Development) framework with Cucumber (v 7.0.0) and Java. The projects showcase automation script development and utilize various reporters such as Extent reports, PDF, HTML, and JSON. Additionally, it offers the ability to capture screenshots for tests and generate error shots for failed test cases.
+This repository contains a collection of sample projects and libraries that demonstrate how to use `CucumberBDD_POM_SparkReport`, a BDD (Behavior-Driven Development) framework with Cucumber (v 7.0.0) and Java. The projects showcase automation script development and utilize various reporters such as Extent reports, PDF, HTML, and JSON. Additionally, it offers the ability to capture screenshots for tests and generate error shots for failed test cases.
 
-# Installation & Prerequisites
+### Installation & Prerequisites
+
 1. JDK 1.8+ (Ensure that the Java class path is properly set)
 2. Maven (Ensure that the .m2 class path is properly set)
 3. Eclipse IDE
 4. Required Eclipse Plugins:
-     i) Maven
-     ii) Cucumber
+   - Maven
+   - Cucumber
 5. Browser driver (Ensure that you have the appropriate browser driver for your desired browser and that the class path is correctly configured)
 
-# Framework Setup
-To set up the framework, you can either fork or clone the repository from: https://github.com/UrsTrulyRamOfficial/CucumberBDD_POM_SparkReport.git , or download the ZIP file and set it up in your local workspace.
+## Framework Setup
+To set up the framework, you can either fork or clone the repository from: [here](https://github.com/UrsTrulyRamOfficial/CucumberBDD_POM_SparkReport.git), or download the ZIP file and set it up in your local workspace.
 
-# Running Sample Tests:
+## Running Sample Tests:
 
-# Run from Eclipse:
-Open test runner file from the project specified path 'src\test\java\com\qa\testRunner'
+## Run from Eclipse:
+Open test runner file from the project specified path `src\test\java\com\qa\testRunner`
 Right click the file and select run as Junit test.
 
-If user wants to run single feature file then open appFeatures from the project specified path: 'src/test/resources/appFeatureFiles'
+If user wants to run single feature file then open appFeatures from the project specified path: `src/test/resources/appFeatureFiles`
 Right click and select run as cucumber feature.
 
-Access the CLI of your operating system (e.g., iTerm for macOS or PowerShell for Windows) and navigate to the project directory. Then, run the following command to execute the features: mvn clean test. By default, this command will invoke the Chrome browser and execute the tests.
+Access the CLI of your operating system (e.g., iTerm for macOS or PowerShell for Windows) and navigate to the project directory. Then, run the following command to execute the features: `mvn clean test`. 
+By default, this command will invoke the Chrome browser and execute the tests.
 
-. To run features on a specific browser, use the command: mvn test "-Dbrowser=browser_name". Replace browser_name with one of the following options: Firefox, Chrome, Safari, etc. Ensure that the browser's driver files are present and specified in the system variables. // Need to find out if Internet Explorer is supported or this should be updated to Edge, then update details around IE to Edge
+- To run features on a specific browser, use the command: mvn test `"-Dbrowser=browser_name"`. Replace browser_name with one of the following options: Firefox, Chrome, Safari, etc. Ensure that the browser's driver files are present and specified in the system variables. // Need to find out if Internet Explorer is supported or this should be updated to Edge, then update details around IE to Edge
 
 Please note that browser drivers are not included as part of this framework. The reason for this is that the version of Selenium browser drivers varies based on the browser version you are using, as well as the Selenium server version.
 
-. To run a specific feature file among multiple feature files, use the command: mvn test -Dcucumber.options="classpath:appFeatureFiles/LoginPage.feature".
+- To run a specific feature file among multiple feature files, use the command: `mvn test -Dcucumber.options="classpath:appFeatureFiles/LoginPage.feature"`.
 
 # Reporters
-Once you have run your tests, you can generate various types of reports. This selenium-cucumber-java framework utilizes different test reporters to communicate pass/failure information.
+Once you have run your tests, you can generate various types of reports. This `CucumberBDD_POM_SparkReport` utilizes different test reporters to communicate pass/failure information.
 
 # Reporting:
 
-# HTML Report
-To generate an HTML report, use the following command: mvn test -Dcucumber.options="--plugin html:target/result.html". This command generates an HTML report, and you can find it at 'extentReports/SparkReport/Index.html'
+### HTML Report
+To generate an HTML report, use the following command: `mvn test -Dcucumber.options="--plugin html:target/result.html"`. This command generates an HTML report, and you can find it at `extentReports/SparkReport/Index.html`.
 
-# JSON Report
-To generate a JSON report, use the following command: mvn test -Dcucumber.options="--plugin json:target/result.json". This command generates a JSON report, and you can find it at 'target/result.json'
+### JSON Report
+To generate a JSON report, use the following command: `mvn test -Dcucumber.options="--plugin json:target/result.json"`. This command generates a JSON report, and you can find it at `target/result.json`.
 
-# PDF Report:
+### PDF Report:
+It will generate automatically once execution got over. and you can find it at `extentReports/PdfReport/ExtentPdf.pdf`
+
 [ExtentPdf.pdf](https://github.com/UrsTrulyRamOfficial/CucumberBDD_POM_SparkReport/files/12093015/ExtentPdf.pdf)
 
-# Extent Spark Report:
-The framework utilizes the Spark Reports Framework to generate HTML test reports. Here is an example of a report generated by the Extent Reports open-source library:
+### Extent Spark Report:
+The framework utilizes the [Spark Reports Framework](http://www.extentreports.com/docs/versions/4/java/spark-reporter.html) to generate HTML test reports. Here is an example of a report generated by the Extent Reports open-source library:
 
 <img width="960" alt="image" src="https://github.com/UrsTrulyRamOfficial/CucumberBDD_POM_SparkReport/assets/74490240/09cc33aa-d31f-477f-8d15-b3dd36bb9715">
 
-
 # BDD Automation with Cucumber-Java and Page Objects
-In this repository, we encourage the use of Behavior-Driven Development (BDD) with Cucumber and Java to develop automation scripts. We provide predefined Step Definitions packaged under .src\test\java\com\qa\steps to help you accelerate your automation development. These Step Definitions support commonly used helper methods and can be customized according to your needs.
+In this repository, we encourage the use of Behavior-Driven Development (BDD) with Cucumber and Java to develop automation scripts. We provide predefined Step Definitions packaged under `.src\test\java\com\qa\steps` to help you accelerate your automation development. These Step Definitions support commonly used helper methods and can be customized according to your needs.
 
-Tests are written in the Cucumber framework using the Gherkin syntax. If you're new to Gherkin and Cucumber, you can find more information at cucumber.io/docs/reference. A typical test will have a structure similar to this:
+Tests are written in the Cucumber framework using the Gherkin syntax. If you're new to Gherkin and Cucumber, you can find more information at [cucumber.io/docs/reference](https://cucumber.io/docs/reference). A typical test will have a structure similar to this:
 
+```gherkin
 Feature: Performing a Google Search
 
     As a user on the Google search page
@@ -78,8 +82,8 @@ Feature: Performing a Google Search
         Examples:
         | searchItem         |
         | "Selenium Webdriver" |
-        
-# The Page Object Design Pattern:
+```
+## The Page Object Design Pattern:
 
 To better organize your test code and make it more maintainable, we recommend using the Page Object Design Pattern. With this pattern, the UI elements of your web application are modeled as objects within the test code. This approach reduces code duplication and allows easy updates if the UI changes. Writing and maintaining test automation can be challenging, especially when it comes to keeping selectors (classes, IDs, or XPath, etc.) up to date with the latest code changes. The Page Object pattern provides a solution by centralizing these selectors in separate .java files, where you can manage them along with the associated methods.
 
@@ -87,7 +91,7 @@ By using the Page Object pattern, your test files will only call the test method
 
 Implementing the Page Object pattern promotes maintainable and scalable test automation code, making it easier to adapt to UI changes and keep your code DRY (Don't Repeat Yourself).
 
-# Contribution
+## Contribution
 We welcome and encourage contributions from the community to make this project even better! If you have ideas, bug fixes, or new features to contribute, follow the steps below:
 
 1. Fork the project repository to your own GitHub account.
