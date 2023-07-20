@@ -1,3 +1,9 @@
+/**
+ * @author RameshReddy.K
+ * @gitHub https://github.com/UrsTrulyRamOfficial
+ *
+ **/
+
 package com.qa.factory;
 
 import org.openqa.selenium.WebDriver;
@@ -27,11 +33,14 @@ public class DriverFactory {
 		if (browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			tlDriver.set(new ChromeDriver());
+			
 		} else if (browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			tlDriver.set(new FirefoxDriver());
+			
 		} else if (browser.equals("safari")) {
 			tlDriver.set(new SafariDriver());
+			
 		} else {
 			System.out.println("Please pass the correct browser value: " + browser);
 		}
@@ -39,7 +48,6 @@ public class DriverFactory {
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
 		return getDriver();
-
 	}
 
 	/**
@@ -50,4 +58,5 @@ public class DriverFactory {
 	public static synchronized WebDriver getDriver() {
 		return tlDriver.get();
 	}
+	
 }
